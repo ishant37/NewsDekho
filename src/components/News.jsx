@@ -59,7 +59,7 @@ export default class News extends React.Component {
         });
       })
       .catch((error) => {
-        console.error("Error fetching the news:", error);
+        console.error("Error of the news:", error);
         this.setState({
           loading: false,
           error:

@@ -43,7 +43,8 @@ export default class News extends React.Component {
       `Fetching articles for category: ${category}, page: ${page}, pageSize: ${pageSize}`
     );
 
-    fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=16a838815bd848ed828b976340735419&page=${page}&pageSize=${pageSize}`)
+  const apiKey = import.meta.env.VITE_NEWS_API_KEY;
+  fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apiKey}&page=${page}&pageSize=${pageSize}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
